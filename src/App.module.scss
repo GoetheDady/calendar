@@ -1,0 +1,33 @@
+.App {
+  .changeType {
+    display: flex;
+    justify-content: center;
+    .changeTypeContent {
+      width: 250px;
+      height: 20px;
+      display: flex;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      margin-top: 10px;
+      transition: background-color .4s;
+      &:hover {
+        background-color: #f2f2f2;
+        .typeItem.active {
+          background-color: #d9d9d9;
+        }
+      }
+      .typeItem {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        color: #737373;
+        border-radius: 4px;
+        transition: background-color .4s;
+        cursor: default;
+        &.active {
+          background-color: #f2f2f2;
+        }
+      }
+    }
+  }
+}

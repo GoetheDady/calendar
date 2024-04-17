@@ -1,0 +1,69 @@
+.month {
+  .weekTitle {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding-top: 26px;
+    .titleItem {
+      text-align: right;
+      font-size: 14px;
+      color: #737373;
+      padding: 10px;
+      border-bottom: 2px solid #f2f2f2;
+    }
+  }
+  .dayContent {
+    height: calc(100vh - 100px);
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .dayList {
+      .weekRow {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        .dayItem {
+          height: calc((100vh - 100px) / 6);
+          border-right: 1px solid #e5e5e5;
+          border-bottom: 1px solid #e5e5e5;
+          padding: 2px;
+          box-sizing: border-box;
+          font-size: 14px;
+          &:nth-child(7n) {
+            border-right: none;
+          }
+          &.weekend {
+            background-color: #f5f5f5;
+          }
+          .dayItemDate {
+            display: flex;
+            justify-content: space-between;
+            height: 26px;
+            .dayItemLunar {
+              font-size: 12px;
+              color: #737373;
+              .firstLunarDay {
+                border-bottom: 1px solid #ff3b30;
+              }
+            }
+            .dayItemSolar {
+              padding-right: 5px;
+              .currentDay {
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                border-radius: 13px;
+                background-color: #ff3b30;
+                color: #fff;
+                text-align: center;
+                line-height: 26px;
+                font-size: 16px;
+                margin-right: 2px;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
